@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        /* Global Styles */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-image: url('background.jpg');
+          background-size: cover;
+          background-position: center;
+        }
+
+        h1, h2 {
+          color: #fff; /* Changed h1 text color to white */
+          margin-bottom: 10px;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        li {
+          margin-bottom: 10px;
+        }
+
+        a:hover {
+          color: #23527c;
+        }
+
+        /* Navigation Bar Styles */
+        .nav-bar {
+          background-color: #333;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .nav-bar ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: row;
+        }
+
+        .nav-bar li {
+          margin-right: 20px;
+        }
+
+        .nav-bar a {
+          color: #fff;
+        }
+
+        .nav-bar a:hover {
+          color: #ccc;
+        }
+
+        /* Home Page Styles */
+        .home-categories {
+          margin-top: 20px;
+        }
+
+        .home-categories ul {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .home-categories li {
+          margin-right: 20px;
+        }
+
+        .home-categories a {
+          font-size: 18px;
+          font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <h1>Welcome to Battle Field Agent Warehouse Support System</h1>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Make an Appointment</a></li>
+            <li><a href="{{ url_for('login') }}">Admin Login</a></li>
+            <li><a href="#">View Appointments</a></li>
+        </ul>
+    </div>
+    <h2 class="home-categories">Categories</h2>
+    <ul class="home-categories">
+        <li><a href="#">Medical Supply</a></li>
+        <li><a href="#">Ammunition Support</a></li>
+        <li><a href="#">Food and Beverages</a></li>
+        <!-- Add more categories as needed -->
+    </ul>
+</body>
+</html>

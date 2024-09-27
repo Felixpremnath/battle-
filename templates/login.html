@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shadow Ghost Company Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-image: linear-gradient(to bottom, #333, #444);
+			background-repeat: no-repeat;
+			height: 100vh;
+			margin: 0;
+		}
+		.container {
+			width: 400px;
+			background-color: rgba(255, 255, 255, 0.1);
+			padding: 20px;
+			border: 1px solid #666;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			margin: 50px auto;
+		}
+		.container h2 {
+			color: #fff;
+			text-align: center;
+			margin-top: 0;
+		}
+		.form-group {
+			margin-bottom: 20px;
+		}
+		.form-group label {
+			color: #fff;
+			display: block;
+			margin-bottom: 10px;
+		}
+		.form-group input {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #666;
+			border-radius: 5px;
+			background-color: rgba(255, 255, 255, 0.2);
+			color: #fff;
+		}
+		.form-group input:focus {
+			background-color: rgba(255, 255, 255, 0.5);
+			border-color: #fff;
+		}
+		.button {
+			background-color: #666;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.button:hover {
+			background-color: #555;
+		}
+		.button-group {
+			margin-top: 20px;
+		}
+		.button-group .button {
+			margin-right: 10px;
+		}
+		.button-group .home-btn {
+			background-color: #666;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.button-group .home-btn:hover {
+			background-color: #555;
+		}
+		.error {
+			color: #ff0000;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Shadow Ghost Company Login</h2>
+		<form action="" method="post">
+			<div class="form-group">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username">
+			</div>
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password">
+			</div>
+			<p class="error">{{ error }}</p>
+			<div class="button-group">
+				<input type="submit" value="Login" class="button">
+				<a href="{{'/'}}" class="button home-btn">Home</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

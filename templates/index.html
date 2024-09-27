@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ghost House Company</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0; /* changed background color to light gray */
+    }
+
+    header {
+      background-color: #333; /* changed background color to dark gray */
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* added text shadow for a spooky effect */
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #03A9F4; /* changed text color to bright blue */
+      text-align: center;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      background-color: rgba(0, 0, 0, 0.5); /* added a dark overlay to create a sense of mystery */
+    }
+
+    section {
+      background-color: #333; /* changed background color to dark gray */
+      padding: 20px;
+      border: 1px solid #666; /* changed border color to darker gray */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* added box shadow for depth */
+      width: 50%;
+      transform: translateY(50px); /* added a slight upward movement to create a sense of unease */
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #fff; /* changed text color to white */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* added text shadow for a spooky effect */
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #ccc; /* changed text color to a light gray */
+    }
+
+    button {
+      background-color: #666; /* changed background color to darker gray */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.5s; /* added transition for a smooth hover effect */
+    }
+
+    button:hover {
+      background-color: #555; /* changed hover background color to darker gray */
+    }
+
+    footer {
+      background-color: #333; /* changed background color to dark gray */
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      clear: both;
+    }
+  </style>
+</head>
+<body onload="restrictPastDate()">
+  <div class="container" style="text-align: center;">
+      <h1 style="color: #03A9F4;">Appointment Form</h1>
+      <form action="/submit" method="post">
+          <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+              <label for="mail" class="form-label">Email</label>
+              <input type="email" class="form-control" name="mail" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+              <label for="date" class="form-label">Appointment Date</label>
+              <input type="date" class="form-control" id="date" name="date" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+      </form>
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <div class="alert alert-success mt-3" role="alert">
+                  <ul>
+                      {% for message in messages %}
+                          <li>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          {% endif %}
+      {% endwith %}
+      <br>
+      <a href="{{ url_for('login') }}" class="btn btn-danger">Admin Login</a>
+  </div>
+
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <script>
+      function restrictPastDate() {
+          const today = new Date().toISOString().split('T')[0];
+          document.getElementById('date').setAttribute('min', today);
+      }
+  </script>
+</body>
+</html>
